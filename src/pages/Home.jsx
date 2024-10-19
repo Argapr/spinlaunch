@@ -1,7 +1,9 @@
 const Home = () => {
     return (
-        <h1>Home</h1>
-    )
-}
-
-export default Home;
+        <div className="flex items-center justify-center h-screen">
+            <h1 className="text-4xl font-bold">BAGIAN AMELL</h1>
+        </div>
+        );
+    };
+    
+    export default Home;
