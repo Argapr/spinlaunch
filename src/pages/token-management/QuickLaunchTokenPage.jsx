@@ -1,13 +1,13 @@
 import React from 'react';
 import MainLayout from '../../layouts/MainLayout';
-import Quick
+import QuickLaunchToken from '../../components/QuickLaunchToken';
 
-const AffiliateProgramPage = () => {
+const QuickLaunchTokenPage = () => {
   return (
     <MainLayout>
-      <AffiliateProgram />
+      <QuickLaunchToken />
     </MainLayout>
   );
 };
 
-export default AffiliateProgramPage;
+export default QuickLaunchTokenPage;
