@@ -1,3 +1,4 @@
+import React from "react";
 import logo from "../assets/logo.png";
 import solana from "../assets/solana-logo.png";
 import raydium from "../assets/raydium-logo.png";
@@ -42,12 +43,12 @@ const Home = () => {
                             <a href="">Home</a>
                         </li>
                         <li className="font-bold text-lg">
-                            <a href="/affiliate-program">Affiliate</a>
+                            <a href="/token-management/affiliate">Affiliate</a>
                         </li>
                         <li className="font-bold text-lg">
                             <a
                                 className="border-2 px-4 py-2 rounded-md hover:bg-white hover:text-black transition"
-                                href="/affiliate-program"
+                                href="/token-management/create"
                             >
                                 Create Token
                             </a>

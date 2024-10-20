@@ -1,13 +1,13 @@
 import React from 'react';
 import MainLayout from '../../layouts/MainLayout';
-import MyToken from '../../components/MyTokens';
+import TokenMint from '../../components/TokenMint';
 
-const MyTokensPage = () => {
+const TokenMintPage = () => {
   return (
     <MainLayout>
-      <MyToken />
+      <TokenMint />
     </MainLayout>
   );
 };
 
-export default MyTokensPage;
+export default TokenMintPage;

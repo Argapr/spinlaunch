@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/layout/Navbar';
 import Sidebar from '../components/layout/Sidebar';
+import Footer from '../components/layout/Footer';
 
 const MainLayout = ({ children }) => {
   return (
@@ -12,6 +13,7 @@ const MainLayout = ({ children }) => {
           {children}
         </main>
       </div>
+      <Footer />
     </div>
   );
 };

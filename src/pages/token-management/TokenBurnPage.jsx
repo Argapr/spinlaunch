@@ -1,13 +1,13 @@
 import React from 'react';
 import MainLayout from '../../layouts/MainLayout';
-import MyToken from '../../components/MyTokens';
+import TokenBurn from '../../components/TokenBurn';
 
-const MyTokensPage = () => {
+const TokenBurnPage = () => {
   return (
     <MainLayout>
-      <MyToken />
+      <TokenBurn />
     </MainLayout>
   );
 };
 
-export default MyTokensPage;
+export default TokenBurnPage;
