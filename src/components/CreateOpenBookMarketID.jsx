@@ -54,23 +54,23 @@ const CreateOpenBookMarketID = () => {
             return newCount > 0 ? parseFloat(newCount.toFixed(2)) : 0;
         });
     };
-const [countTick, setCountTick] = useState(0.0001);
+    const [countTick, setCountTick] = useState(0.0001);
 
-const incrementTick = (e) => {
-    e.preventDefault();
-    setCountTick((prevCountTick) => {
-        const newCountTick = parseFloat(prevCountTick) + 0.00001;
-        return newCountTick.toFixed(5); // Keep five decimal places
-    });
-};
+    const incrementTick = (e) => {
+        e.preventDefault();
+        setCountTick((prevCountTick) => {
+            const newCountTick = parseFloat(prevCountTick) + 0.0001;
+            return newCountTick.toFixed(4); // Keep five decimal places
+        });
+    };
 
-const decrementTick = (e) => {
-    e.preventDefault();
-    setCountTick((prevCountTick) => {
-        const newCountTick = parseFloat(prevCountTick) - 0.00001;
-        return newCountTick >= 0.0001 ? newCountTick.toFixed(5) : 0.0001;
-    });
-};
+    const decrementTick = (e) => {
+        e.preventDefault();
+        setCountTick((prevCountTick) => {
+            const newCountTick = parseFloat(prevCountTick) - 0.0001;
+            return newCountTick >= 0.0001 ? newCountTick.toFixed(4) : 0.0001;
+        });
+    };
 
     const tokens = [{ id: 1, name: "SOL" }];
     const basetokens = [{ id: 1, name: "SOL" }];
@@ -242,16 +242,9 @@ const decrementTick = (e) => {
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-sm mt-1">Your balance: 0 </p>
                                 <ToggleOption />
-                                <div className="flex justify-between mt-2">
-                                    <p className="text-sm">Total tokens: 0</p>
-                                    <p className="text-sm">
-                                        Total Addresses: 0
-                                    </p>
-                                </div>
                             </div>
-                            <button className=" border border-[#fff] bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 m-1 rounded-md font-medium flex items-center">
+                            <button className=" border border-[#fff] bg-purple-700 hover:bg-purple-800 text-white px-4 py-2 mt-5 rounded-md font-medium flex items-center justify-center w-full">
                                 <img
                                     src={wallet}
                                     alt="Logo"
@@ -279,26 +272,28 @@ const decrementTick = (e) => {
                         </div>
                         <div className="p-4">
                             <h2 className="text-xl font-bold mb-4">
-                                How to use Solana Multisender?
+                                How to Create OpenBook Market?
                             </h2>
                             <ol className="list-decimal list-inside space-y-2">
                                 <li>Connect your Solana Wallet</li>
-                                <li>Select the token you want to airdrop</li>
+                                <li>Select the Base Token</li>
+                                <li>Select the Quote Token</li>
                                 <li>
-                                    Introduce the token quantity each wallet
-                                    will receive
-                                </li>
-                                <li>Write the list of addresses</li>
-                                <li>Verify all the information is correct</li>
-                                <li>
-                                    Write the description you want for your SPL
-                                    Token
+                                    Set the Minimum Buy (Minimum Order Size)
                                 </li>
                                 <li>
-                                    Click on Process Send Token and accept the
-                                    transaction
+                                    Set the Minimum Price Change (Price Tick)
                                 </li>
-                                <li>Wait until your airdrop has finished!</li>
+                                <li>
+                                    Set the length in Advanced Options (not
+                                    recommended if you don’t have deep knowledge
+                                    about how it works)
+                                </li>
+                                <li>Click on create Market ID</li>
+                                <li>
+                                    Accept the transaction and wait until your
+                                    Market is ready
+                                </li>
                             </ol>
                         </div>
                     </div>
@@ -355,38 +350,23 @@ const ToggleOption = () => {
         <div className="flex flex-col mt-4">
             <div>
                 <div className="flex items-center">
-                    <div
-                        className={`w-12 h-6 ${
-                            isChecked ? "bg-indigo-600" : "bg-indigo-800"
-                        } rounded-full p-1 cursor-pointer transition-colors duration-300 ease-in-out`}
-                        onClick={handleToggle}
-                    >
+                    <div>
+                        <p>Advanced options</p>
                         <div
-                            className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
-                                isChecked ? "translate-x-6" : ""
-                            }`}
-                        ></div>
+                            className={`w-12 h-6 ${
+                                isChecked ? "bg-indigo-600" : "bg-indigo-800"
+                            } rounded-full p-1 cursor-pointer transition-colors duration-300 ease-in-out`}
+                            onClick={handleToggle}
+                        >
+                            <div
+                                className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform duration-300 ease-in-out ${
+                                    isChecked ? "translate-x-6" : ""
+                                }`}
+                            ></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <span className={`${isChecked ? "block" : "hidden"}`}>
-                <div className="mt-4">
-                    <textarea
-                        className="w-full p-3 bg-indigo-900 rounded"
-                        rows={4}
-                        placeholder="Address, amount"
-                    ></textarea>
-                </div>
-            </span>
-            <button
-                className={`${
-                    isChecked
-                        ? "hidden"
-                        : "mt-3 border border-[#fff] bg-transparent hover:bg-purple-700 text-white px-4 py-2 m-1 rounded-md font-medium"
-                }`}
-            >
-                Add Recipient
-            </button>
         </div>
     );
 };
