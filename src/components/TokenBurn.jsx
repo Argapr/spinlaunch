@@ -25,8 +25,7 @@ const TokenBurn = () => {
     ];
     return (
         <>
-
-<div className="bg-[#060136] text-white p-8 rounded-lg shadow-md mb-4">
+            <div className="bg-[#060136] text-white p-8 rounded-lg shadow-md mb-4">
                 <div className="flex justify-between items-start">
                     <div className="w-2/3 pr-8">
                         <h1 className="text-4xl font-bold mb-8">Burn Token</h1>

@@ -41,7 +41,7 @@ const QuickLaunchToken = () => {
                                     <textarea className="w-full p-3 bg-indigo-900 rounded" rows={4}></textarea>
                                 </div>
                                 <div>
-                                    <label className="block mb-2 text-sm font-medium">IMAGE</label>
+                                    <label className="block mb-2 text-sm font-medium">IMAGE</label>        
                                 <div className="w-24 h-24 bg-indigo-900 rounded flex items-center justify-center">
                                     <PlusIcon size={24} />
                                 </div>
