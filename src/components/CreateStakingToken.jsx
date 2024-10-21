@@ -1,8 +1,131 @@
-import React from "react";
+import React, { useState } from "react";
 
 const CreateStakingToken = () => {
+    const [isLive, setIsLive] = useState(true);
+    const [isStakedOnly, setIsStakedOnly] = useState(false);
     return (
-        <>
+        <div>
+            <p className="text-center text-4xl m-[85px] font-bold">
+                Staking Pool
+            </p>
+            <div className="flex items-center justify-between mx-20">
+                {/* Toggle Live / Finished */}
+                <div className="flex items-center space-x-2">
+                    <div className="flex bg-[#3f3270cc] rounded-full border border-purple-500">
+                        <button
+                            className={`px-3 py-1 rounded-full ${
+                                isLive
+                                    ? "bg-purple-600 text-[#fff] font-bold text-sm"
+                                    : "text-[#fff] font-bold text-sm"
+                            }`}
+                            onClick={() => setIsLive(true)}
+                        >
+                            Live
+                        </button>
+                        <button
+                            className={`px-3 py-1 rounded-full ${
+                                !isLive
+                                    ? "bg-purple-600 text-[#fff] font-bold text-sm"
+                                    : "text-[#fff] font-bold text-sm"
+                            }`}
+                            onClick={() => setIsLive(false)}
+                        >
+                            Finished
+                        </button>
+                    </div>
+
+                    {/* Staked Only */}
+                    <div className="flex flex-col space-y-1">
+                        <span className="text-white text-xs font-bold">
+                            STAKED ONLY
+                        </span>
+                        <label className="relative inline-flex items-center cursor-pointer">
+                            <input
+                                type="checkbox"
+                                className="sr-only"
+                                checked={isStakedOnly}
+                                onChange={() => setIsStakedOnly(!isStakedOnly)}
+                            />
+                            <div className="w-12 h-7 bg-[#3f3270cc] rounded-full p-1">
+                                <div
+                                    className={`h-5 w-5 bg-white rounded-full transition-transform ${
+                                        isStakedOnly
+                                            ? "translate-x-4"
+                                            : "translate-x-0"
+                                    }`}
+                                ></div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                <div className="flex items-center space-x-2">
+                    {/* Sort By */}
+                    <div className="flex items-center space-x-2">
+                        <span className="text-white text-xs font-bold">
+                            SORT BY
+                        </span>
+                        <div className="relative">
+                            <select className="bg-[#3f3270cc] font-bold text-white text-xs border border-white rounded-full py-2 px-4 pr-10 appearance-none outline-none">
+                                <option className="text-xs font-bold">
+                                    APR
+                                </option>
+                                <option className="text-xs font-bold">
+                                    Earned
+                                </option>
+                                <option className="text-xs font-bold">
+                                    Total Staked
+                                </option>
+                                <option className="text-xs font-bold">
+                                    Latest
+                                </option>
+                            </select>
+                            {/* Custom Arrow */}
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                                <svg
+                                    className="w-4 h-4 text-white"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Search */}
+                    <div className="relative flex items-center">
+                        <span className="text-white text-xs font-bold mr-2">
+                            SEARCH
+                        </span>
+                        <input
+                            type="text"
+                            placeholder="Search pools"
+                            className="bg-[#3f3270cc] placeholder:text-[#fff] border border-white rounded-full py-2 px-4 text-xs outline-none font-bold text-[#fff]"
+                        />
+                        <svg
+                            className="w-5 h-5 absolute right-3 text-white"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M21 21l-4.35-4.35m1.45-5.65A7.5 7.5 0 1110 2.5a7.5 7.5 0 017.5 7.5z"
+                            ></path>
+                        </svg>
+                    </div>
+                </div>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-start justify-center my-7 mx-20">
                 <div class="overflow-hidden rounded-3xl bg-[#0d0734]">
                     <div class="p-6 flex items-center justify-between bg-cardHeader">
@@ -647,7 +770,7 @@ const CreateStakingToken = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

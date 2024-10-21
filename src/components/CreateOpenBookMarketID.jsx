@@ -299,7 +299,7 @@ const CreateOpenBookMarketID = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-[#190544] text-white p-8 rounded-lg shadow-md mb-4">
+            <div className="bg-[#060136] text-white p-8 rounded-lg shadow-md mb-4">
                 <h2 className="text-2xl font-bold mb-2">
                     What is Solana Token Creator?
                 </h2>
@@ -314,7 +314,7 @@ const CreateOpenBookMarketID = () => {
                     projects.
                 </p>
             </div>
-            <div className="bg-[#190544] text-white p-8 rounded-lg shadow-md mb-4">
+            <div className="bg-[#060136] text-white p-8 rounded-lg shadow-md mb-4">
                 <h2 className="text-2xl font-bold mb-2">
                     What can Token Admin do?
                 </h2>
@@ -325,7 +325,7 @@ const CreateOpenBookMarketID = () => {
                     Token Admin
                 </p>
             </div>
-            <div className="bg-[#190544] text-white p-8 rounded-lg shadow-md mb-4">
+            <div className="bg-[#060136] text-white p-8 rounded-lg shadow-md mb-4">
                 <h2 className="text-2xl font-bold mb-2">
                     Is it Safe to use Solana Token Creator here?
                 </h2>
