@@ -18,6 +18,7 @@ import TokenBurnPage from "./pages/token-management/TokenBurnPage";
 import TokenMintPage from "./pages/token-management/TokenMintPage";
 import UpdateTokenMetaDataPage from "./pages/token-management/UpdateTokenMetaDataPage";
 import WithdrawLPPoolPage from "./pages/token-management/WithdrawLPPoolPage";
+import ChatBotPage from "./pages/token-management/ChatBotPage";
 
 import "./App.css";
 import "./styles/index.css";
@@ -27,6 +28,7 @@ const App = () => {
         <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/chatbot" element={<ChatBotPage />} />
                 <Route path="/pools" element={<CreateStakingTokenPage />} />
                 <Route
                     path="/token-management/quick-launch"
