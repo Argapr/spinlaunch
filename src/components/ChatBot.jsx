@@ -3,9 +3,9 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
 import { marked } from "marked";
-import logo from "../../assets/chat-white.png"
+import logo from "../assets/chat-white.png"
 
-function GeminiInReact() {
+function ChatBot() {
     const [inputValue, setInputValue] = useState("");
     const [chatHistory, setChatHistory] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -197,4 +197,4 @@ function ChatBubble({ message, isUser }) {
     );
 }
 
-export default GeminiInReact;
+export default ChatBot;
