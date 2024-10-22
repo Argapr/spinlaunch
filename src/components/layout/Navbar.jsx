@@ -17,7 +17,7 @@ const Navbar = () => {
         <img
           src={logo}
           alt="Logo"
-          className="h-9 w-auto"
+          className="h-10 w-auto"
         />
         </a>
       </div>
